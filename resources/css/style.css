@@ -1,0 +1,125 @@
+body {
+    background-color: #b3d9ff;
+    display: flex;
+    justify-content: center;
+}
+
+nav {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 15%;
+    left: 0;
+    width: 15%;
+    height: 90%;
+    background-color: #6b8dce;
+}
+
+nav a {
+    color: white;
+    font-size: 2vmax;
+    font-family: "Gill Sans", sans-serif;
+    text-decoration: none;
+    padding: 10px 15px;
+    display: inline-block;
+}
+
+h1 {
+    font-family: "Gill Sans", sans-serif;
+    top: 0;
+    font-size: 3vmax;
+}
+
+h3 {
+    font-family: "Gill Sans", sans-serif;
+    font-size: 2vmax;
+}
+
+nav a:hover {
+    background-color: #5c7ab3;
+}
+
+.listContainer {
+    display: flex;
+    flex-direction: column;
+    width: 85%;
+    height: 90%;
+    left: 15%;
+    top: 15%;
+    position: fixed;
+    align-items: center;
+    justify-content: center;
+    background-color: #6699cc;
+}
+
+.newItemContainer {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    height: 20%;
+    align-items: center;
+    justify-content: center;
+    background-color: #6fa6dd;
+    margin:2%;
+}
+
+.newItemContainer form {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 2vmax;
+    font-family: "Gill Sans", sans-serif;
+}
+
+.newItemContainer form::before {
+    content: "";
+}
+
+.newItemContainer form::after {
+    content: "";
+}
+
+ul.taskList {
+    border: 1px solid black;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 95%;
+    height: 50%;
+    padding-left: 0;
+    list-style-type: none;
+}
+
+li.taskElement {
+    display: flex;
+    height: auto;
+    width: 100%;
+    background-color: #6699cc;
+}
+
+li.taskElement span {
+    text-align: center;
+    margin: 3px;
+    font-size: 3vmax;
+    font-family: "Gill Sans", sans-serif;
+}
+
+.deleteTask {
+    background-color: #5d8bb9;
+    height:100%;
+    width:50px;
+    cursor:pointer;
+ }
+ 
+ .deleteTask:hover {
+    background-color: #527ba3;
+    color:white;
+ }
+
+li:hover {
+    background-color: #5c8ab8;
+    cursor: pointer;
+}
+
+input[type="checkbox"] {
+    margin-right: 10px;
+}

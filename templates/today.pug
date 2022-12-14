@@ -1,0 +1,29 @@
+doctype html
+html
+  head
+    title To-Do-To-Day
+    meta(charset='utf-8')
+    link(rel='stylesheet' href='resources/css/style.css')
+    script(src='resources/js/script.js')
+  body
+    h1 Today's To-Do Items
+    include sidebar
+    .listContainer
+        ul.taskList
+            each row in rowData
+                li.taskElement(onclick='javascript:updateTask("taskDone")')
+                    span #{row.taskTitle}
+                    span | Priority: #{row.taskPriority}
+                    button.deleteTask(onclick='javascript:updateTask("delete")' type='button') Delete
+        .newItemContainer
+            h3 Add a new item
+            form(id='new-item' action='/today' method='post')
+                label(for='newTaskTitle') Title 
+                input#newTaskTitle(type='text' name='newTaskTitle')
+                label(for='newTaskPriority') Priority 
+                select#newTaskPriority(name='newTaskPriority')
+                    option(value='low') Low
+                    option(value='medium' selected) Medium
+                    option(value='high') High
+                button.button(id="add-item" type="submit") Add Item
+

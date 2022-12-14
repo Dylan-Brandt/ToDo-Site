@@ -1,0 +1,25 @@
+doctype html
+html
+  head
+    title To-Do-Another-Day
+    meta(charset='utf-8')
+    link(rel='stylesheet' href='resources/css/style.css')
+    script(src='resources/js/script.js')
+  body
+    h1 Tomorrow's To-Do Items
+    include sidebar
+    .listContainer
+        ul.taskList
+            li(onclick='javascript:taskDone()')
+                span Go to the bar
+        .newItemContainer
+            h3 Add a new item
+            form(id='new-item' action='javascript:addItem()')
+                label(for='newToDo') Title 
+                input(type='text' name='newToDo')
+                label(for='priority') Priority 
+                select(id='priority' name='priority' default)
+                    option(value='low') Low
+                    option(value='medium' selected) Medium
+                    option(value='high') High
+                button.button(id="add-item" type="submit") Add Item

@@ -1,0 +1,16 @@
+{
+  "name": "to-do-to-day",
+  "version": "1.0.0",
+  "description": "A website to add tasks and check them off when complete",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mysql": "^2.18.1",
+    "pug": "^3.0.2"
+  }
+}
