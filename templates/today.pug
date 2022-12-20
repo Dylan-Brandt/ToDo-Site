@@ -7,16 +7,8 @@ html
     script(src='resources/js/script.js')
   body
     h1 Today's To-Do Items
-    include sidebar
     .listContainer
-        ul.taskList
-            each row in rowData
-                li.taskElement(onclick='javascript:updateTask("taskDone")')
-                    span #{row.taskTitle}
-                    span | Priority: #{row.taskPriority}
-                    button.deleteTask(onclick='javascript:updateTask("delete")' type='button') Delete
         .newItemContainer
-            h3 Add a new item
             form(id='new-item' action='/today' method='post')
                 label(for='newTaskTitle') Title 
                 input#newTaskTitle(type='text' name='newTaskTitle')
@@ -26,4 +18,29 @@ html
                     option(value='medium' selected) Medium
                     option(value='high') High
                 button.button(id="add-item" type="submit") Add Item
+        .toggleRows
+            label(for='checkbox') Show only incomplete tasks
+            input(type="checkbox" id="checkbox" onclick="toggleRows()")
+        ul.taskList#taskList
+            each row in rowData
+                li.taskElement(id='id' + row.taskId onclick='taskDone(' + row.taskId + ')')
+                    // way to many ifs
+                    if row.taskPriority == 'medium'
+                        if row.taskStatus == 'done'
+                            span.taskTitle(id='id' + row.taskId + 'span' style="text-decoration: line-through") #{row.taskTitle} !
+                        else
+                            span.taskTitle(id='id' + row.taskId + 'span') #{row.taskTitle} !
+                        
+                    else if row.taskPriority == 'high'
+                        if row.taskStatus == 'done'
+                            span.taskTitle(id = 'id' + row.taskId + 'span' style ="text-decoration: line-through") #{row.taskTitle} !!
+                        else
+                            span.taskTitle(id = 'id' + row.taskId + 'span') #{row.taskTitle} !!
+                    else
+                        if row.taskStatus == 'done'
+                            span.taskTitle(id = 'id' + row.taskId + 'span' style = "text-decoration: line-through") #{row.taskTitle} 
+                        else
+                            span.taskTitle(id = 'id' + row.taskId + 'span') #{row.taskTitle}
+                    button.deleteTask(onclick='deleteTask(' + row.taskId + ')' type='button') X
+        
 

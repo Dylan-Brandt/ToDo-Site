@@ -7,11 +7,8 @@ body {
 nav {
     display: flex;
     flex-direction: column;
-    position: fixed;
-    top: 15%;
-    left: 0;
-    width: 15%;
-    height: 90%;
+    width: 90%;
+    height: 15%;
     background-color: #6b8dce;
 }
 
@@ -27,7 +24,7 @@ nav a {
 h1 {
     font-family: "Gill Sans", sans-serif;
     top: 0;
-    font-size: 3vmax;
+    font-size: 2.5vmax;
 }
 
 h3 {
@@ -42,10 +39,9 @@ nav a:hover {
 .listContainer {
     display: flex;
     flex-direction: column;
-    width: 85%;
+    width: 80%;
     height: 90%;
-    left: 15%;
-    top: 15%;
+    top: 10%;
     position: fixed;
     align-items: center;
     justify-content: center;
@@ -56,27 +52,39 @@ nav a:hover {
     display: flex;
     flex-direction: column;
     width: 80%;
-    height: 20%;
+    height: 15%;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     background-color: #6fa6dd;
-    margin:2%;
 }
 
 .newItemContainer form {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
+    align-content: space-between;
     font-size: 2vmax;
     font-family: "Gill Sans", sans-serif;
+    width: 100%;
 }
 
-.newItemContainer form::before {
-    content: "";
+input#newTaskTitle, #newTaskPriority, #add-item {
+    height:30%;
 }
 
-.newItemContainer form::after {
-    content: "";
+label {
+    margin: 5%;
+}
+.button {
+    margin: 5%;
+    width: 50%;
+    background-color: green;
+    border: none;
+}
+
+#add-item:hover {
+    cursor: pointer;
 }
 
 ul.taskList {
@@ -84,30 +92,52 @@ ul.taskList {
     justify-content: space-evenly;
     align-items: center;
     width: 95%;
-    height: 50%;
+    height: 60%;
     padding-left: 0;
     list-style-type: none;
+    overflow-y: scroll;
 }
 
 li.taskElement {
     display: flex;
-    height: auto;
+    justify-content: space-between;
     width: 100%;
     background-color: #6699cc;
+    align-items: center;
+}
+
+span.taskTitle {
+    align-self: flex-start;
+    width: 80%;
 }
 
 li.taskElement span {
-    text-align: center;
-    margin: 3px;
+    margin: 2%;
+    text-align: left;
     font-size: 3vmax;
     font-family: "Gill Sans", sans-serif;
+}
+
+@media (min-width: 1000px) {
+    li.taskElement span {
+        font-size: 2em;
+    }
+    nav a {
+        font-size: 2em;
+    }
+    .newItemContainer form {
+        flex-direction: row;
+    }
 }
 
 .deleteTask {
     background-color: #5d8bb9;
     height:100%;
-    width:50px;
+    width:10%;
+    position:inherit;
+    float: right;
     cursor:pointer;
+    font-size: 2vmax;
  }
  
  .deleteTask:hover {
@@ -118,8 +148,18 @@ li.taskElement span {
 li:hover {
     background-color: #5c8ab8;
     cursor: pointer;
+    text-decoration: line-through;
 }
 
-input[type="checkbox"] {
-    margin-right: 10px;
+.toggleRows{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    font-size: 2vmax;
+    font-family: "Gill Sans", sans-serif;
+}
+
+.toggleRows label{
+    margin: 2%;
 }

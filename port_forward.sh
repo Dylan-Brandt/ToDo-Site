@@ -1,1 +1,1 @@
-ssh -L 3006:csel-kh4250-19.cselabs.umn.edu:3006 bran1008@csel-kh4250-19.cselabs.umn.edu
+ssh -L 3006:csel-kh1250-25.cselabs.umn.edu:3006 bran1008@csel-kh1250-25.cselabs.umn.edu
